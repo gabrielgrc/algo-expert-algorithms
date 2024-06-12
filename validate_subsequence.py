@@ -1,3 +1,4 @@
+#Complexity analysis : O(n) time | O(1) space
 def isValidSubsequence(array, sequence):
     # Write your code here.
     pointer_array = 0
