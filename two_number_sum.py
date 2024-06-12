@@ -1,3 +1,4 @@
+#Complexity Analysis : O(n^2) time | O (1) space
 def twoNumberSum1(array, targetSum):
     # Write your code here.
     # Loop through each element in the array
@@ -10,6 +11,7 @@ def twoNumberSum1(array, targetSum):
 
     return []
 
+#Complexity Analysis : O(n) time | O(n) space
 def twoNumberSum2(array, targetSum):
     # Initialize an empty dictionary to store numbers that were checked
     nums = {}
