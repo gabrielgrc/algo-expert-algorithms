@@ -5,6 +5,7 @@ class BinaryTree:
         self.left = None
         self.right = None
 
+#This is the iterative approach
 #Complexity Analysis : T O(n) | S O(h)
 def nodeDepths(root):
     sumOfDepths = 0
@@ -19,6 +20,12 @@ def nodeDepths(root):
         stack.append({"node": node.right, "depth": depth + 1})
     return sumOfDepths
 
+#This is the recursive approach
+#Complexity Analysis : T O(n) | S O(log(n)) for a balanced binary tree, O(n) for a unbalanced tree
+def nodeDepths2(node, depth = 0):
+    if node is None:
+        return 0
+    return depth + nodeDepths2(node.left, depth + 1) + nodeDepths2(node.right, depth + 1)
 
 # Binary tree to test the function
 root = BinaryTree(1)
@@ -33,3 +40,4 @@ root.left.left.right = BinaryTree(9)
 
 # Call the nodeDepths function and print the result
 print(nodeDepths(root))  
+#print(nodeDepths2(root)) 
