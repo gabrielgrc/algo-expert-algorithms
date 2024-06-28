@@ -21,7 +21,7 @@ def nodeDepths(root):
     return sumOfDepths
 
 #This is the recursive approach
-#Complexity Analysis : T O(n) | S O(log(n)) for a balanced binary tree, O(n) for a unbalanced tree
+#Complexity Analysis : T O(n), S O(h)
 def nodeDepths2(node, depth = 0):
     if node is None:
         return 0
