@@ -6,14 +6,14 @@ class LinkedList:
 
 class Solution:
     def middleNode(self, linkedList):
-        slow = linkedList
-        fast = linkedList
+        slowNode = linkedList
+        fastNode = linkedList
 
-        while fast and fast.next:
-            slow = slow.next
-            fast = fast.next.next
+        while fastNode is not None and fastNode.next is not None:
+            slowNode = slowNode.next
+            fastNode = fastNode.next.next
         
-        return slow
+        return slowNode
 
 # Helper function to create a linked list from a list and return the head
 def createLinkedList(linkedList):
