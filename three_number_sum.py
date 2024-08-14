@@ -17,4 +17,17 @@ def threeNumberSum(array, targetSum):
                 rightIdx -= 1
     return triplets
 
+#Brutal force approach
+#Complexity Analysis : Time O(n^3) | Space O(n)
+# def threeNumberSum(array, targetSum):
+#     array.sort()
+#     tripletsTargetSum = []
+#     for i in range(len(array)):
+#         for j in range(i + 1, len(array)):
+#             for k in range(j + 1, len(array)):
+#                 if array[k] + array[j] + array[i] == targetSum:
+#                     tripletsTargetSum.append([array[i], array[j], array[k]])
+    
+#     return tripletsTargetSum
+
 print(threeNumberSum([12, 3, 1, 2, -6, 5, -8, 6], 0))
