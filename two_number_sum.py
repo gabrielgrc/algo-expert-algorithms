@@ -1,35 +1,39 @@
-#Complexity Analysis : O(n^2) time | O (1) space
-def twoNumberSum1(array, targetSum):
-    # Write your code here.
-    # Loop through each element in the array
-    for i in range(len(array)):
-        # Loop through each element again for the pair
-        for j in range(i + 1, len(array)):
-            # Check if the sum of the current pair is equal to the targetSum
-            if array[i] + array[j] == targetSum:
-                return [array[i], array[j]]
-
-    return []
-
-#Complexity Analysis : O(n) time | O(n) space
-def twoNumberSum2(array, targetSum):
-    # Initialize an empty dictionary to store numbers that were checked
+#Complexity Analysis : Time O(n) | Space O(n)
+def twoNumberSum(array, targetSum):
     nums = {}
     
-    # Iterate through each number in the array
     for num in array:
-        # Calculate the complement of the current number
         complement = targetSum - num
-        
-        # Check if the complement exists in the dictionary
         if complement in nums:
-            # If it exists, return the pair as a list
             return [complement, num]
-        
-        # Otherwise, add the current number to the dictionary
         nums[num] = True
     
-    # If no pair is found, return an empty list
     return []
+    
+#Brutal Force approach
+#Complexity Analysis : Time O(n^2) | Space O(1) 
+# def twoNumberSum(array, targetSum):
+#     for i in range(len(array)):
+#         for j in range(i + 1, len(array)):
+#             if array[i] + array[j] == targetSum:
+#                 return [array[i], array[j]]
+
+#     return []
+
+#Complexity Analysis : Time O(nlog(n)) | Space O(1)
+# def twoNumberSum(array, targetSum):
+#     array.sort()
+#     left = 0
+#     right = len(array) - 1
+
+#     while left < right:
+#         if array[left] + array[right] == targetSum:
+#             return [array[left], array[right]]
+#         elif array[left] + array[right] < targetSum:
+#             left += 1
+#         elif array[left] + array[right] > targetSum:
+#             right -=1
+    
+#     return []
 
 print(twoNumberSum([3, 5, -4, 8, 11, 1, -1, 6], 10))
